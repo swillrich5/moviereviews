@@ -7,8 +7,28 @@
 </head>
     <body>
         <div class="container">
-            <h1>Welcome to the Movies Home Page, {{ name }}</h1>
-            <h2>This is the full home page</h2>
+            <form action="">
+                <div class="mb-3">
+                    <label class="form-label">Search for Movie:</label>
+                    <input type="text" name="searchMovie" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+            Searching for {{ searchTerm }}
+            <br />
+            <br />
+            <h2>Join our mailing list:</h2>
+            <form action="{% url 'movie:signup' %}">
+                <div class="mb-3">
+                    <label for="email" class="form-label">
+                        Enter your email:
+                    </label>
+                    <input type="email" class="form-control" name="email" />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Sign up
+                </button>
+            </form>
         </div>
     </body>
 </html>
