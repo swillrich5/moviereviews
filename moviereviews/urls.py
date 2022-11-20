@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', movieViews.home)
     path('', include('movie.urls', namespace='movie')),
+    path('news/', include ('news.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,
