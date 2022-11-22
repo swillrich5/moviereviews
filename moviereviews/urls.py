@@ -24,6 +24,7 @@ urlpatterns = [
     # path('', movieViews.home)
     path('', include('movie.urls', namespace='movie')),
     path('news/', include ('news.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,
