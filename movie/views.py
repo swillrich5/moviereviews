@@ -71,3 +71,9 @@ def updatereview(request, review_id):
                             'review': review, 'form': form,
                             'error': 'Bad data in form'
                         })
+
+
+def deletereview(request, review_id):
+    review = get_object_or_404(Review, pk=review_id, user=request.user)
+    review.delete()
+    return redirect('movie:movie_detail', review.movie.id)
